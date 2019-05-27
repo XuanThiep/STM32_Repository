@@ -32,7 +32,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
+#include "stdint.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -61,8 +62,26 @@ void Error_Handler(void);
 #define LED_RED_Pin GPIO_PIN_13
 #define LED_RED_GPIO_Port GPIOJ
 #define LED_GREEN_Pin GPIO_PIN_5
-#define LED_GREEN_GPIO_Port GPIOJ
+#define LED_GREEN_GPIO_Port
+
 /* USER CODE BEGIN Private defines */
+#define DEBUG_TYPE_SWV		0
+#define DEBUG_TYPE_UART		1
+
+#define DEBUG_SELECT		DEBUG_TYPE_SWV
+
+
+
+#if defined(DEBUG_SELECT)
+
+#define PrintDebug			printf
+
+#else
+#error "Please select debug type in main.h !"
+#endif
+
+
+
 
 /* USER CODE END Private defines */
 

@@ -41,6 +41,9 @@
 *.su
 *.idb
 *.pdb
+*.elf
+*.launch
+*.elf.launch
 
 # Kernel Module Compile Results
 *.mod*
